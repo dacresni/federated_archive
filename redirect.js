@@ -1,9 +1,12 @@
-function search(term, stamp) { 
-  const url = `http://archive.org/wayback/available?url=${term}`
+async function search() { 
+  let term = document.getElementById("website").value
+  let stamp =document.getElementById("date").valueAsNumber
+  let stamp = Date(stamp)
+  const url = `http://archive.org/wayback/available?url=${term}&timestamp=${stamp}`
   try{ 
     const response  = await fetch(url)
     if (!response.ok) {
-      throw new Error(`Response status: ${response.status}&timestamp=${stamp}`);
+      throw new Error(`Response status: ${response.status}`);
     }
     const json = await response.json();
     console.log(json);
