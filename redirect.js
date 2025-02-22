@@ -1,6 +1,7 @@
-async function search(term, stamp) { 
-  term = document.getElementById("website")
-  stamp =document.getElementById("date")
+async function search() { 
+  let term = document.getElementById("website").value
+  let stamp =document.getElementById("date").valueAsNumber
+  let stamp = Date(stamp)
   const url = `http://archive.org/wayback/available?url=${term}&timestamp=${stamp}`
   try{ 
     const response  = await fetch(url)
