@@ -10,4 +10,5 @@ function search(term) {
   } catch (error) {
     console.error(error.message);
   }
+
 }
