@@ -1,4 +1,4 @@
-function search(term, stamp) { 
+async function search(term, stamp) { 
   const url = `http://archive.org/wayback/available?url=${term}`
   try{ 
     const response  = await fetch(url)
