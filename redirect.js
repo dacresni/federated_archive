@@ -23,5 +23,4 @@ async function search() {
     } catch (error) {
       console.error(error.message);
     }
-  }
-}
+
